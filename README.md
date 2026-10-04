@@ -159,7 +159,6 @@ PTT on/off.
 `git clone https://github.com/RPiks/griddick`\
 `cd griddick`\
 `./install-deps.sh`\
-`./setup_env.sh`\
 `./build.sh`\
 `press BOOTSEL on Pico, attach Pico *`\
 `./flash.sh`\
