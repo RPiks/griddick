@@ -121,7 +121,7 @@ ADC interface.
                                     │
                                    [3k]
                                     │
- ●─radio SPK ───── 0,1µ───[4k3]─────●────► GPIO28 / ADC2
+ ●─radio SPK ─────[0,1µ]──[4k3]─────●────► GPIO28 / ADC2
    (3.5 mm jack tip)                │           (pin 34)
                                    [3k]
                                     │
@@ -135,7 +135,7 @@ ADC interface.
 DAC interface.
 
 ```text
- GPIO0 ──[3k6]──●────0,1µ─────radio MIC─────────●
+ GPIO0 ──[3k6]──●───[0,1µ]────radio MIC─────────●
  (pin 1)        │             (3.5 mm jack ring)
               [0,1µ]
                 │
