@@ -156,16 +156,24 @@ PTT on/off.
 
 ## How to start rapidly
 
+On Fedora / Debian, run
+
 `git clone https://github.com/RPiks/griddick`\
 `cd griddick`\
 `./install-deps.sh`\
 `./build.sh`\
 `press BOOTSEL on Pico, attach Pico *`\
 `./flash.sh`\
-`host/gtstation`
+`host/bin/gtstation`\
+`press Connect button`
 
 `* further flashing won't require pressing BOOTSEL`
 
+Or download .deb / .rpm packages + .uf2.
+
+Please help to promote the project: star it, provide feedback, and report bugs.
+
+Consider visiting my Pico WSPR beacon https://github.com/RPiks/pico-wspr-tx
 
 
 ## Status and licence
