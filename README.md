@@ -19,7 +19,7 @@ Every DSP algorithm runs on the Pico, integer math only. Hand-rolled filters let
 <i>Griddick Station tool is displaying waterfall in real time, a packet on the way in.</i>
 </p>
 
-<p align="left">&#8203;</p>
+<p align="left">
 
 ## Properties
 
@@ -40,6 +40,7 @@ Every DSP algorithm runs on the Pico, integer math only. Hand-rolled filters let
 | Host | Debian and Fedora. Command-line tools, the Griddick Station Qt, and an IP/UDP gateway daemon. |
 | Licence | LGPL-2.1-or-later, except two tiny DSP units shipped as a prebuilt lib for Pico. |
 
+</p>
 
 ## Results of testing
 
@@ -54,7 +55,9 @@ Direwolf was `atest -B 1200 -F 1` and `-F 0`, so the single-bit repair is on in 
 <p align="center">
 <img src="./dec-rate-night.png#gh-dark-mode-only" width="760" alt="Decode rate, Griddick against Direwolf, F1 and F0">
 <img src="./dec-rate-light.png#gh-light-mode-only" width="760" alt="Decode rate, Griddick against Direwolf, F1 and F0">
+</p>
 
+<p align="center">
 
 | SNR, dB | Griddick F1 | Direwolf F1 | Griddick F0 | Direwolf F0 |
 |---:|---:|---:|---:|---:|
