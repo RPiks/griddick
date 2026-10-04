@@ -21,7 +21,7 @@ Every DSP algorithm runs on the Pico, integer math only. Hand-rolled filters let
 
 ## Properties
 
-| | |
+|Item |Description |
 |---|---|
 | Board | Raspberry Pi Pico, RP2040 / 180 MHz. |
 | Modem | Bell 202 AFSK. 1200 baud. Tones 1200 Hz and 2200 Hz. |
@@ -49,7 +49,8 @@ Testing was performed with Griddick TNC, Pico firmware V0.9.7, and Direwolf ates
 
 Direwolf was `atest -B 1200 -F 1` and `-F 0`, so the single-bit repair is on in F1 chart and off in F0 chart. The SNR values shown in these figures are computed over the 300–3000 Hz voice band, i.e., signal and noise powers are integrated over that band.
 <p align="center">
-<img src="./dec-rate-night.png" width="760" alt="Decode rate, Griddick against Direwolf, F1 and F0">
+<img src="./dec-rate-night.png#gh-dark-mode-only" width="760" alt="Decode rate, Griddick against Direwolf, F1 and F0">
+<img src="./dec-rate-light.png#gh-light-mode-only" width="760" alt="Decode rate, Griddick against Direwolf, F1 and F0">
 
 
 <p align="center">
@@ -78,7 +79,7 @@ F1 stayed well ahead of F0, tracing the same shape as the replay while the repai
 
 Firmware builds to a UF2. Flash by copying it onto the RPI-RP2 drive. Host tools land in `host/bin`.
 
-| Tool | Type | |
+| Tool | Type | Description |
 |---|---|---|
 | `gttx` | Cmd | Send a UI frame, an APRS position, status, or message, or one I-frame under ARQ. `--every` key runs beacons until Ctrl-C. |
 | `gtdump` | Cmd |  Print decoded KISS data. Sets the Pico clock first, unless asked not to. |
