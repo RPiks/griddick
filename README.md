@@ -1,22 +1,12 @@
-<style>
-  .griddick-tnc h1 {
-    border-bottom: 1px solid rgb(127, 0, 127);
-    padding-bottom: 0.25em;
-    margin-bottom: 0.4em;
-  }
-</style>
-
-<table class="griddick-tnc">
-<tr>
-<td width="192"><img src="./icon.jpg" width="192" alt="Griddick mark"></td>
-<td>
-<h1>Griddick TNC</h1>
-Extended KISS TNC for RPi Pico • AX.25 packet radio • 1200 bps
-Host CLI and Qt app • IP/UDP gate • 240 kHz ADC • 120 kHz PWM DAC
- • Off-Grid comms • City-prepping • BBS
-</td>
-</tr>
-</table>
+<div align="center">
+  <img src="./icon.jpg" width="160" alt="Griddick mark">
+  <h1>Griddick TNC</h1>
+  <p>
+    Extended KISS TNC for RPi Pico • AX.25 packet radio • 1200 bps<br>
+    Host CLI and Qt app • IP/UDP gate • 240 kHz ADC • 120 kHz PWM DAC<br>
+    Off-Grid comms • City-prepping • BBS
+  </p>
+</div>
 
 Griddick is a compact packet-radio modem built for the case when the usual paths are down and it's time to go off-grid.
 
