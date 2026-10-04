@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./gticon.png" width="256" alt="Griddick TNC" style="display:block; margin:0 auto;">
-  <h1 style="margin:0.25em 0 0.5em;">Griddick TNC</h1>
+  <h1 style="margin:0.0em 0 0.5em;">Griddick TNC</h1>
   <p>
     Extended KISS TNC on RPi Pico • AX.25 packet radio • 1200 bps • ARQ<br>
     Host CLI and Qt app • IP/UDP gate • 240 kHz ADC • 120 kHz PWM DAC<br>
