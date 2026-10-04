@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./icon.jpg" width="160" alt="Griddick mark">
+  <img src="./gticon.png" width="256" alt="Griddick TNC">
   <h1>Griddick TNC</h1>
   <p>
     Extended KISS TNC for RPi Pico • AX.25 packet radio • 1200 bps<br>
