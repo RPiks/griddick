@@ -69,6 +69,7 @@ Direwolf was `atest -B 1200 -F 1` and `-F 0`, so the single-bit repair is on in 
 | 6.00 | 95 | 93 | 80 | 72 |
 | 7.00 | 98 | 97 | 96 | 92 |
 | 8.00 | 99 | 100 | 98 | 99 |
+</p>
 
 &nbsp;
 ### On the air, Griddick F1 against F0
@@ -77,11 +78,11 @@ To put a stack of demodulation algorithms through their paces, Griddick comes lo
 
 F1 stayed well ahead of F0, tracing the same shape as the replay while the repair search ran in real time. The main goal was to make sure the bit-repairing algorithm (F1 mode) has enough juice to run on the Pico without side effects such as ADC ring-buffer overflow or dropped packets.
 
-<p align="left">&#8203;</p>
 
 ## What you get
 
 Firmware builds to a UF2. Flash by copying it onto the RPI-RP2 drive. Host tools land in `host/bin`.
+<p align="left"></p>
 
 | Tool | Type | Description |
 |---|---|---|
