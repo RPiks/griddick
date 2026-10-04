@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Raspberry Pi OS / Raspbian packages for firmware + host tools.
-# Pi 4, 32- or 64-bit. Does not clone pico-sdk (setup_env.sh).
+# Pi 4, 32- or 64-bit. Then setup_env.sh fills third_party/ and tools/.
 # Desktop Debian and Fedora: ./install-deps.sh
 #
 #   ./install-deps-raspbian.sh
@@ -70,6 +70,15 @@ try_apt patchelf
 try_apt picotool
 
 echo "install-deps-raspbian: done"
+
+
+# Packages are root. The tree fetch must stay owned by the invoker.
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ "$(id -u)" -eq 0 && -n "${SUDO_USER:-}" && "${SUDO_USER}" != root ]]; then
+    sudo -u "${SUDO_USER}" -H -- "${ROOT}/setup_env.sh"
+else
+    "${ROOT}/setup_env.sh"
+fi
 echo "    cmake $(cmake --version | head -1)"
 if command -v arm-none-eabi-gcc >/dev/null; then
     echo "    $(arm-none-eabi-gcc --version | head -1)"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install distro packages needed to build firmware + host tools + packages.
-# Debian/Ubuntu and Fedora desktops. Does not clone pico-sdk (setup_env.sh).
-# Packaging (griddick-dist/pack.sh): dpkg-deb and rpmbuild.
+# Debian/Ubuntu and Fedora desktops. Then setup_env.sh fills third_party/ and tools/.
+# Packaging: griddick-dist/pack-rpm.sh (Fedora), pack-deb.sh (Debian).
 # Raspberry Pi OS / Raspbian: ./install-deps-raspbian.sh
 #
 #   ./install-deps.sh
@@ -127,6 +127,15 @@ elif [[ "${FAMILY}" == fedora ]]; then
 fi
 
 echo "install-deps: done"
+
+
+# Packages are root. The tree fetch must stay owned by the invoker.
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ "$(id -u)" -eq 0 && -n "${SUDO_USER:-}" && "${SUDO_USER}" != root ]]; then
+    sudo -u "${SUDO_USER}" -H -- "${ROOT}/setup_env.sh"
+else
+    "${ROOT}/setup_env.sh"
+fi
 echo "    cmake $(cmake --version | head -1)"
 if command -v arm-none-eabi-gcc >/dev/null; then
     echo "    $(arm-none-eabi-gcc --version | head -1)"
