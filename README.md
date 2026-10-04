@@ -19,10 +19,12 @@ Every DSP algorithm runs on the Pico, integer math only. Hand-rolled filters let
 <i>Griddick Station tool is displaying waterfall in real time, a packet on the way in.</i>
 </p>
 
+<p align="left">&#8203;</p>
+
 ## Properties
 
-|Item |Description |
-|---|---|
+| Item | Description |
+|:---|:---|
 | Board | Raspberry Pi Pico, RP2040 / 180 MHz. |
 | Modem | Bell 202 AFSK. 1200 baud. Tones 1200 Hz and 2200 Hz. |
 | Receive | 240 kHz, 12-bit ADC, decimated to 48 kHz. DSP RX hotpath runs at 48 kHz sample rate. |
