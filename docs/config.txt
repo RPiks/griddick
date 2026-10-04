@@ -1,0 +1,100 @@
+Configuration JSON
+==================
+
+Put and get use KISS SET-HW 0x11. On the wire the object is followed by
+,$ and CRC-16/CCITT-FALSE. A file on disk has no CRC. A put applies only
+the keys that are present. Unknown keys are ignored. A put is refused
+while the TX is on air. A successful put is written to the flash journal
+(end of the 2 MiB flash), except the debug section, which is RAM only and
+clears on reboot.
+
+Boot loads the journal if one exists. An empty journal is filled once
+from the compiled defaults. Get returns the RAM copy.
+
+Top-level version is informational ("0.9.7"). It is not a schema switch.
+
+kiss
+----
+
+legacyMode   bool, boot false.
+             true turns off log events other than Runtime/Cfg/Time, and
+             turns off PCM dump, inject, and the dump/inject host path.
+             SET-HW 0x11 still works.
+
+logEvents    bool, boot true.
+             false suppresses event tags. Runtime, Cfg, and Time still log.
+
+txDelay      integer 0–255, boot 30.
+             Leading flags, in 10 ms units (30 = 300 ms).
+
+persist      integer 0–255, boot 63.
+             KISS p-persistence. 255 = always transmit.
+
+slotTime     integer 0–255, boot 0.
+             Slot time, in 10 ms units.
+
+txTail       integer 0–255, boot 2.
+             Trailing flags, in 10 ms units.
+
+fullDup      0 or 1, boot 0.
+             1 = full duplex (no p-persistence wait).
+
+link
+----
+
+linkMode     "UI" or "I", boot UI.
+             Host connected-mode sessions read this. Firmware RX stays UI.
+
+myCall       string, boot TEST-0.
+             SSID form CALL or CALL-N. Used by gtcall / gttx --arq.
+
+paclen       integer 1–256, boot 256.
+             Max I-frame info length for the host link.
+
+maxframe     integer 1–7, boot 4.
+             AX.25 window.
+
+t1_ms        integer 1–60000, boot 2000.
+             Retransmit timer, ms. Arm from PTT-down.
+
+t2_ms        integer 0–60000, boot 0.
+             Delay before RR/REJ after an I frame. Not applied to UA.
+
+t3_ms        integer 0–600000, boot 30000.
+             Idle link timer, ms.
+
+n2           integer 1–16, boot 10.
+             Retry count. gtcall exits 1 after N2.
+
+modem
+-----
+
+bitFixCnt    0 or 1, boot 0.
+             1: if FCS fails, flip one raw tone bit and recheck FCS until
+             it matches or the raw buffer ends. 0: FCS fail is dropped.
+             Values other than 0 or 1 are a config error.
+
+bitFixAlgo   must be 0.
+             Only the single-flip search is implemented.
+
+bitFixSanity "none" or "ASCII", boot ASCII.
+             ASCII: a repair is kept only if every info byte is 0x20–0x7E.
+             none: any matching FCS is kept. A frame that already has a
+             good FCS is not passed through this check.
+
+debug
+-----
+
+Not stored in flash. Omitted keys keep the current RAM value. Boot:
+inject off, SNR 3.25, seed 1.
+
+txAwgnInject bool, boot false.
+             true adds noise on the 12 kHz TX PWM sample while PTT is up.
+             false is bit-identical to a normal TX.
+
+txAwgnSNRdB  number 2.00–12.00, boot 3.25.
+             PWM-domain ratio of tone RMS to noise RMS. Not the SNR after
+             the radio. One or two decimal places (3.5 = 3.50).
+
+txAwgnSeed   integer 1–2147483647, boot 1.
+             PN seed. Changing it reseeds the generator.

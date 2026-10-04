@@ -1,0 +1,5 @@
+/build/
+/libpixdsp.so
+.cache/
+compile_commands.json
+/private/

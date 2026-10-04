@@ -1,0 +1,12 @@
+# Example /opt/griddick/griddickd.conf
+# Keywords are sshd-style. '#' starts a comment. No spaces in passwords.
+
+Device     /dev/ttyACM0
+DeviceWait 30
+TunName    gt0
+TunAddr    10.64.0.1/24
+Call       JBLADE-8
+
+# Call and JBLADE-0 are the same AX.25 address. Do not list both.
+Peer       JCALE-1         10.64.0.2
+Peer       LUREED-7        10.64.0.3   s3cret

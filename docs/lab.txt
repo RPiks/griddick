@@ -1,0 +1,29 @@
+Lab scripts
+===========
+
+Two Picos, one host. TX and RX on different CDC ports. Squelch open.
+Payload list: test/corpus/air/ui.txt (one UI per line). Gap after TX is
+2–3 s. bitFix sanity for these runs is none.
+
+Live air, TX PWM noise, RX F1 then F0 (UI string in gtdump):
+
+  test/run_pico_air_live_awgn.sh --tx /dev/ttyACM4 --rx /dev/ttyACM3
+  test/run_pico_air_live_awgn_100.sh --tx /dev/ttyACM4 --rx /dev/ttyACM3
+
+Default SNRs 3 3.5 4 5 6 7 8 (PWM-domain, not measured air dB).
+Summary: test/logs/air_live_awgn/summary.txt
+
+Dump each shot, then score the same WAV with Pico inject and atest:
+
+  test/run_pico_tx_awgn.sh --tx /dev/ttyACM4 --rx /dev/ttyACM3
+  test/run_pico_tx_awgn_100.sh --tx /dev/ttyACM4 --rx /dev/ttyACM3
+  test/run_pico_tx_awgn_78.sh --tx /dev/ttyACM4 --rx /dev/ttyACM3
+
+Host WAV (one Pico). gen_packets + Gaussian mix at a target in-band SNR,
+then Pico inject F1/F0 and atest F1/F0:
+
+  test/run_gen_awgn.sh --device /dev/ttyACM3
+  test/run_gen_awgn.sh --gen-only --snr "3 4" --count 20
+
+Default SNRs 3 3.25 3.5 3.75 4 5 6 7 8, 100 files each.
+Corpus test/corpus/awgn_pn/<snr>/. measure.txt has requested and measured dB.

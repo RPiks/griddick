@@ -1,0 +1,5 @@
+ GPIO0 ──[3k6]──●────0,1µ────► radio MIC─────────●
+ (pin 1)        │              (3.5 mm jack ring)
+              [0,1µ]
+                │
+               GND

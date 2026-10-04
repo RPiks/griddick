@@ -1,0 +1,9 @@
+# Dist input. host_version and firmware_version are independent.
+source_tag: "v0.9.7"
+host_version: "0.9.7"
+firmware_version: "0.9.7"
+package_revision: "1"
+# Path to a prebuilt UF2 (relative to this file, or absolute).
+uf2: "griddick_tnc.uf2"
+maintainer: "Roman Piksaykin <piksaykin@gmail.com>"
+homepage: "https://github.com/RPiks/griddick"

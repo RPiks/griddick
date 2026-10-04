@@ -1,0 +1,13 @@
+                                 ADC_VREF (Pico pin 35)
+                                    │
+                                   [3k]
+                                    │
+ ●─radio SPK ───── 0,1µ───[4k3]─────●────► GPIO28 / ADC2 (pin 34)
+   (3.5 mm jack tip)                │
+                                   [3k]
+                                    │
+                                 AGND (pin 33)
+
+ ●─radio SPK GND (3.5 mm jact sleeve)             
+          │                   
+       AGND (pin 33)
