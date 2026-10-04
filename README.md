@@ -57,7 +57,7 @@ Direwolf was `atest -B 1200 -F 1` and `-F 0`, so the single-bit repair is on in 
 <img src="./dec-rate-light.png#gh-light-mode-only" width="760" alt="Decode rate, Griddick against Direwolf, F1 and F0">
 </p>
 
-<p align="center">
+<div align="center">
 
 | SNR, dB | Griddick F1 | Direwolf F1 | Griddick F0 | Direwolf F0 |
 |---:|---:|---:|---:|---:|
@@ -71,7 +71,7 @@ Direwolf was `atest -B 1200 -F 1` and `-F 0`, so the single-bit repair is on in 
 | 7.00 | 98 | 97 | 96 | 92 |
 | 8.00 | 99 | 100 | 98 | 99 |
 
-</p>
+</div>
 
 &nbsp;
 ### On the air, Griddick F1 against F0
